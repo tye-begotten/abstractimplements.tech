@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Abstract Implements — Landing Page</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#0E1726}
+a{color:#0E1726}a:hover{color:#3A4658}
+</style>
+</helmet>
+<div id="top" style="font-family: Inter, system-ui, sans-serif; color: #0E1726; background: #F4F2EC; overflow-x: hidden">
+
+  <div style="background: #0E1726; color: #F4F2EC">
+    <header style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+      <a href="#top" style="display: flex; align-items: center; gap: 12px; min-height: 44px; color: #F4F2EC; text-decoration: none">
+        <svg role="img" aria-label="Abstract Implements logo" width="36" height="36" viewBox="0 0 40 40">
+          <rect x="0" y="0" width="18" height="18" fill="#F4F2EC"></rect>
+          <path d="M22 18 A18 18 0 0 1 40 0 L40 18 Z" fill="{{accent}}"></path>
+          <circle cx="9" cy="31" r="9" fill="#F4F2EC"></circle>
+          <rect x="23.5" y="23.5" width="15" height="15" fill="none" stroke="#F4F2EC" stroke-width="3"></rect>
+        </svg>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: -0.01em">abstract<span style="font-weight: 500; opacity: 0.85"> implements</span></span>
+      </a>
+      <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 15px; font-weight: 500">
+        <a href="#services" style="display: inline-flex; align-items: center; min-height: 44px; color: #F4F2EC; text-decoration: none">Services</a>
+        <a href="#landscape" style="display: inline-flex; align-items: center; min-height: 44px; color: #F4F2EC; text-decoration: none">The landscape</a>
+        <a href="#approach" style="display: inline-flex; align-items: center; min-height: 44px; color: #F4F2EC; text-decoration: none">Approach</a>
+        <a href="#work" style="display: inline-flex; align-items: center; min-height: 44px; color: #F4F2EC; text-decoration: none">Case studies</a>
+        <a href="#contact" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 2px solid #F4F2EC; color: #F4F2EC; text-decoration: none; font-weight: 600">Contact</a>
+      </nav>
+    </header>
+
+    <section style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 72px 32px 104px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px 64px">
+      <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+        <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: {{accent}}">Technology consulting</div>
+        <h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(2.75rem, 6vw, 4.75rem); line-height: 1; letter-spacing: -0.03em; text-wrap: balance">From abstract ideas to working systems.</h1>
+        <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #C9CED6; max-width: 560px; text-wrap: pretty">We help growing teams plan, build and run the technology their business depends on — senior expertise, without the overhead of a big firm.</p>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 14px">
+          <a href="#contact" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; background: {{accent}}; color: #0E1726; font-weight: 600; font-size: 16px; text-decoration: none">Start a conversation</a>
+          <a href="#landscape" style="display: inline-flex; align-items: center; min-height: 44px; color: #F4F2EC; font-weight: 500; font-size: 16px">See how we choose the right stack</a>
+        </div>
+      </div>
+      <svg aria-hidden="true" viewBox="0 0 400 400" style="flex: 0 1 380px; min-width: 0; max-width: 100%; height: auto">
+        <rect x="0" y="0" width="180" height="180" fill="#F4F2EC"></rect>
+        <path d="M220 180 A180 180 0 0 1 400 0 L400 180 Z" fill="{{accent}}"></path>
+        <circle cx="90" cy="310" r="90" fill="#F4F2EC"></circle>
+        <rect x="222" y="222" width="176" height="176" fill="none" stroke="#F4F2EC" stroke-width="4"></rect>
+        <rect x="282" y="282" width="56" height="56" fill="{{accent}}"></rect>
+      </svg>
+    </section>
+  </div>
+
+  <section id="services" style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 96px 32px; display: flex; flex-direction: column; gap: 48px">
+    <div style="display: flex; flex-direction: column; gap: 14px">
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #4A5566">What we do</div>
+      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.08; letter-spacing: -0.025em">Plan it. Build it. Keep it running.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 20px">
+      <div style="display: flex; flex-direction: column; gap: 10px; padding: 28px; background: #FFFFFF; border: 1px solid #DCD8CE">
+        <svg aria-hidden="true" width="40" height="40" viewBox="0 0 32 32" style="margin-bottom: 10px"><rect x="2" y="2" width="28" height="28" fill="none" stroke="#0E1726" stroke-width="2.5"></rect><path d="M2 30 L30 2" stroke="{{accent}}" stroke-width="2.5"></path></svg>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; line-height: 1.25">Strategy &amp; Architecture</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">Technology roadmaps, system design and build-vs-buy decisions grounded in your goals.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; padding: 28px; background: #FFFFFF; border: 1px solid #DCD8CE">
+        <svg aria-hidden="true" width="40" height="40" viewBox="0 0 32 32" style="margin-bottom: 10px"><circle cx="16" cy="16" r="13.5" fill="none" stroke="#0E1726" stroke-width="2.5"></circle><circle cx="16" cy="16" r="5" fill="{{accent}}"></circle></svg>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; line-height: 1.25">Cloud &amp; Infrastructure</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">Migrations, modernization and reliable, cost-aware environments that scale with you.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; padding: 28px; background: #FFFFFF; border: 1px solid #DCD8CE">
+        <svg aria-hidden="true" width="40" height="40" viewBox="0 0 32 32" style="margin-bottom: 10px"><rect x="2" y="2" width="12" height="12" fill="#0E1726"></rect><rect x="18" y="2" width="12" height="12" fill="none" stroke="#0E1726" stroke-width="2.5"></rect><rect x="2" y="18" width="12" height="12" fill="none" stroke="#0E1726" stroke-width="2.5"></rect><rect x="18" y="18" width="12" height="12" fill="{{accent}}"></rect></svg>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; line-height: 1.25">Software Delivery</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">Custom applications, integrations and automation, shipped in small, steady increments.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; padding: 28px; background: #FFFFFF; border: 1px solid #DCD8CE">
+        <svg aria-hidden="true" width="40" height="40" viewBox="0 0 32 32" style="margin-bottom: 10px"><path d="M2 30 L16 2 L30 30 Z" fill="none" stroke="#0E1726" stroke-width="2.5" stroke-linejoin="round"></path><circle cx="16" cy="21" r="4" fill="{{accent}}"></circle></svg>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; line-height: 1.25">Data &amp; AI Enablement</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">Clean data foundations, reporting and practical AI that solves real workflow problems.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="landscape" style="background: #0E1726; color: #F4F2EC">
+    <section style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 96px 32px; display: flex; flex-direction: column; gap: 56px">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px 64px">
+      <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: {{accent}}">The landscape</div>
+        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.04; letter-spacing: -0.03em; max-width: 820px; text-wrap: balance">The options are endless. Your time isn’t.</h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #C9CED6; max-width: 680px; text-wrap: pretty">Every layer of a modern system comes with dozens of credible choices, and every vendor will tell you theirs is the one. Here is a small sample of what is on the table for a single project.</p>
+      </div>
+      <svg role="img" aria-label="A swirl of tiles, each carrying an icon for one of the ten technology categories, narrows like a funnel to a single highlighted choice." viewBox="0 -10 440 472" style="flex: 0 1 420px; min-width: 0; max-width: 100%; height: auto">
+        <ellipse cx="220.0" cy="60.0" rx="198.0" ry="39.6" fill="none" stroke="#3A4658" stroke-width="1.5" stroke-dasharray="3 7"></ellipse>
+        <ellipse cx="225.3" cy="148.8" rx="143.1" ry="28.6" fill="none" stroke="#3A4658" stroke-width="1.5" stroke-dasharray="3 7"></ellipse>
+        <ellipse cx="225.7" cy="228.1" rx="91.8" ry="18.4" fill="none" stroke="#3A4658" stroke-width="1.5" stroke-dasharray="3 7"></ellipse>
+        <ellipse cx="208.7" cy="304.1" rx="45.6" ry="9.1" fill="none" stroke="#3A4658" stroke-width="1.5" stroke-dasharray="3 7"></ellipse>
+        <ellipse cx="200.6" cy="378.0" rx="10.0" ry="2.0" fill="none" stroke="#3A4658" stroke-width="1.5" stroke-dasharray="3 7"></ellipse>
+        <g transform="translate(197.4 17.1) rotate(-15) scale(0.82)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="1.95"></rect><path d="M4 9H19L16 6M20 15H5L8 18" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="1.95" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(284.2 20.8) rotate(25) scale(0.82)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="1.94"></rect><path d="M3 20H21M6 20V12M12 20V5M18 20V9" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="1.94" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(122.9 22.5) rotate(9) scale(0.83)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="1.92"></rect><path d="M7 18H17A4 4 0 0 0 17 10A6 6 0 0 0 5.5 11.5A3.5 3.5 0 0 0 7 18Z" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="1.92" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(354.4 30.4) rotate(21) scale(0.84)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="1.9"></rect><path d="M4 5H20V10H4ZM4 14H20V19H4ZM7 7.5H9M7 16.5H9" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(62.6 39.1) rotate(13) scale(0.86)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="1.87"></rect><path d="M5 7A7 3 0 0 0 19 7A7 3 0 0 0 5 7V17A7 3 0 0 0 19 17V7M5 12A7 3 0 0 0 19 12" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="1.87" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(400.5 47.0) rotate(7) scale(0.87)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="1.83"></rect><path d="M12 3L19 6V12C19 16 16 19.5 12 21C8 19.5 5 16 5 12V6Z" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="1.83" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(26.6 50.7) rotate(-8) scale(0.89)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="1.8"></rect><path d="M4 8H20V19H4ZM9 8V5H15V8" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(194.8 70.0) rotate(-17) scale(0.77)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.08"></rect><path d="M3 12H8L10.5 6L13.5 18L16 12H21" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.08" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(277.0 73.8) rotate(-4) scale(0.77)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.07"></rect><path d="M4 8H20V19H4ZM9 8V5H15V8" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.07" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(346.1 79.9) rotate(7) scale(0.79)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.02"></rect><path d="M5 7A7 3 0 0 0 19 7A7 3 0 0 0 5 7V17A7 3 0 0 0 19 17V7M5 12A7 3 0 0 0 19 12" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.02" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(121.0 83.3) rotate(-9) scale(0.78)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.04"></rect><path d="M9 7L4 12L9 17M15 7L20 12L15 17" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.04" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(70.0 91.9) rotate(-2) scale(0.81)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="1.97"></rect><path d="M7 8L17 11.5M7 16L17 12.5M3 7a2 2 0 1 0 4 0a2 2 0 1 0-4 0M3 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0M17 12a2 2 0 1 0 4 0a2 2 0 1 0-4 0" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="1.97" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(382.8 101.6) rotate(-12) scale(0.83)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="1.93"></rect><path d="M7 18H17A4 4 0 0 0 17 10A6 6 0 0 0 5.5 11.5A3.5 3.5 0 0 0 7 18Z" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="1.93" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(277.6 122.5) rotate(25) scale(0.72)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.23"></rect><path d="M7 8L17 11.5M7 16L17 12.5M3 7a2 2 0 1 0 4 0a2 2 0 1 0-4 0M3 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0M17 12a2 2 0 1 0 4 0a2 2 0 1 0-4 0" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.23" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(201.4 123.3) rotate(2) scale(0.71)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.24"></rect><path d="M12 3L19 6V12C19 16 16 19.5 12 21C8 19.5 5 16 5 12V6Z" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.24" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(337.8 127.4) rotate(26) scale(0.74)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.16"></rect><path d="M9 7L4 12L9 17M15 7L20 12L15 17" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.16" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(131.9 128.5) rotate(-20) scale(0.73)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.19"></rect><path d="M4 5H20V10H4ZM4 14H20V19H4ZM7 7.5H9M7 16.5H9" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.19" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(90.5 142.5) rotate(-13) scale(0.76)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.09"></rect><path d="M3 20H21M6 20V12M12 20V5M18 20V9" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.09" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(366.2 143.2) rotate(9) scale(0.78)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.06"></rect><path d="M3 12H8L10.5 6L13.5 18L16 12H21" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.06" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(217.9 166.3) rotate(12) scale(0.66)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.42"></rect><path d="M4 9H19L16 6M20 15H5L8 18" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.42" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(285.4 167.8) rotate(-4) scale(0.67)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.39"></rect><path d="M3 20H21M6 20V12M12 20V5M18 20V9" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.39" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(151.1 172.6) rotate(2) scale(0.68)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.36"></rect><path d="M7 18H17A4 4 0 0 0 17 10A6 6 0 0 0 5.5 11.5A3.5 3.5 0 0 0 7 18Z" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.36" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(334.9 179.4) rotate(10) scale(0.70)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.27"></rect><path d="M4 5H20V10H4ZM4 14H20V19H4ZM7 7.5H9M7 16.5H9" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.27" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(111.7 184.4) rotate(-22) scale(0.72)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.23"></rect><path d="M5 7A7 3 0 0 0 19 7A7 3 0 0 0 5 7V17A7 3 0 0 0 19 17V7M5 12A7 3 0 0 0 19 12" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.23" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(195.2 211.5) rotate(-1) scale(0.61)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.62"></rect><path d="M4 8H20V19H4ZM9 8V5H15V8" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.62" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(264.5 213.0) rotate(0) scale(0.61)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.61"></rect><path d="M5 7A7 3 0 0 0 19 7A7 3 0 0 0 5 7V17A7 3 0 0 0 19 17V7M5 12A7 3 0 0 0 19 12" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.61" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(144.6 220.2) rotate(5) scale(0.64)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.48"></rect><path d="M3 12H8L10.5 6L13.5 18L16 12H21" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.48" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(314.4 225.6) rotate(26) scale(0.65)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.46"></rect><path d="M7 18H17A4 4 0 0 0 17 10A6 6 0 0 0 5.5 11.5A3.5 3.5 0 0 0 7 18Z" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.46" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(195.5 250.6) rotate(-18) scale(0.56)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.88"></rect><path d="M9 7L4 12L9 17M15 7L20 12L15 17" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.88" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(253.4 252.9) rotate(-13) scale(0.56)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.84"></rect><path d="M3 12H8L10.5 6L13.5 18L16 12H21" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.84" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(152.9 258.3) rotate(-24) scale(0.59)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.7"></rect><path d="M7 8L17 11.5M7 16L17 12.5M3 7a2 2 0 1 0 4 0a2 2 0 1 0-4 0M3 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0M17 12a2 2 0 1 0 4 0a2 2 0 1 0-4 0" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(288.0 262.3) rotate(24) scale(0.61)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="2.63"></rect><path d="M4 8H20V19H4ZM9 8V5H15V8" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="2.63" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(186.9 297.7) rotate(-1) scale(0.51)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="3.15"></rect><path d="M12 3L19 6V12C19 16 16 19.5 12 21C8 19.5 5 16 5 12V6Z" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="3.15" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(238.0 299.1) rotate(-5) scale(0.51)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="3.11"></rect><path d="M7 8L17 11.5M7 16L17 12.5M3 7a2 2 0 1 0 4 0a2 2 0 1 0-4 0M3 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0M17 12a2 2 0 1 0 4 0a2 2 0 1 0-4 0" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="3.11" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(205.8 334.1) rotate(2) scale(0.45)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="3.57"></rect><path d="M4 5H20V10H4ZM4 14H20V19H4ZM7 7.5H9M7 16.5H9" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="3.57" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(206.5 372.8) rotate(-6) scale(0.41)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="3.91"></rect><path d="M3 20H21M6 20V12M12 20V5M18 20V9" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="3.91" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(189.1 380.3) rotate(-25) scale(0.42)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#56627A" stroke-width="3.8"></rect><path d="M12 3L19 6V12C19 16 16 19.5 12 21C8 19.5 5 16 5 12V6Z" transform="translate(-12 -12)" fill="none" stroke="#56627A" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(420.5 58.7) rotate(29) scale(0.91)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.76"></rect><path d="M7 18H17A4 4 0 0 0 17 10A6 6 0 0 0 5.5 11.5A3.5 3.5 0 0 0 7 18Z" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.76" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(25.3 66.6) rotate(-17) scale(0.93)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.72"></rect><path d="M3 12H8L10.5 6L13.5 18L16 12H21" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.72" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(398.2 73.3) rotate(-10) scale(0.95)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.69"></rect><path d="M4 9H19L16 6M20 15H5L8 18" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.69" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(57.8 87.2) rotate(-23) scale(0.96)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.66"></rect><path d="M9 7L4 12L9 17M15 7L20 12L15 17" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.66" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(352.8 91.3) rotate(9) scale(0.98)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.64"></rect><path d="M3 20H21M6 20V12M12 20V5M18 20V9" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.64" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(121.8 95.4) rotate(1) scale(0.99)"><rect x="-15" y="-15" width="30" height="30" fill="#F4F2EC" stroke="#F4F2EC" stroke-width="1.62"></rect><path d="M7 8L17 11.5M7 16L17 12.5M3 7a2 2 0 1 0 4 0a2 2 0 1 0-4 0M3 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0M17 12a2 2 0 1 0 4 0a2 2 0 1 0-4 0" transform="translate(-12 -12)" fill="none" stroke="#0E1726" stroke-width="1.62" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(280.4 99.7) rotate(-2) scale(1.00)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.61"></rect><path d="M4 5H20V10H4ZM4 14H20V19H4ZM7 7.5H9M7 16.5H9" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.61" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(199.0 100.7) rotate(-3) scale(1.00)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.6"></rect><path d="M12 3L19 6V12C19 16 16 19.5 12 21C8 19.5 5 16 5 12V6Z" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(51.9 110.4) rotate(-8) scale(0.85)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.88"></rect><path d="M12 3L19 6V12C19 16 16 19.5 12 21C8 19.5 5 16 5 12V6Z" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.88" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(385.8 117.6) rotate(-5) scale(0.87)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.84"></rect><path d="M4 9H19L16 6M20 15H5L8 18" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.84" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(74.6 123.1) rotate(3) scale(0.89)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.79"></rect><path d="M4 5H20V10H4ZM4 14H20V19H4ZM7 7.5H9M7 16.5H9" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.79" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(354.4 127.4) rotate(26) scale(0.91)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.77"></rect><path d="M5 7A7 3 0 0 0 19 7A7 3 0 0 0 5 7V17A7 3 0 0 0 19 17V7M5 12A7 3 0 0 0 19 12" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.77" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(127.5 137.1) rotate(-13) scale(0.92)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.74"></rect><path d="M3 20H21M6 20V12M12 20V5M18 20V9" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.74" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(285.6 137.8) rotate(1) scale(0.93)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.72"></rect><path d="M7 18H17A4 4 0 0 0 17 10A6 6 0 0 0 5.5 11.5A3.5 3.5 0 0 0 7 18Z" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.72" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(206.2 142.4) rotate(5) scale(0.93)"><rect x="-15" y="-15" width="30" height="30" fill="#F4F2EC" stroke="#F4F2EC" stroke-width="1.71"></rect><path d="M4 9H19L16 6M20 15H5L8 18" transform="translate(-12 -12)" fill="none" stroke="#0E1726" stroke-width="1.71" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(83.0 153.9) rotate(-19) scale(0.81)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.99"></rect><path d="M4 9H19L16 6M20 15H5L8 18" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.99" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(361.2 155.5) rotate(21) scale(0.82)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.95"></rect><path d="M4 8H20V19H4ZM9 8V5H15V8" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.95" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(116.7 163.3) rotate(2) scale(0.84)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.9"></rect><path d="M7 18H17A4 4 0 0 0 17 10A6 6 0 0 0 5.5 11.5A3.5 3.5 0 0 0 7 18Z" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(317.5 169.9) rotate(11) scale(0.85)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.88"></rect><path d="M5 7A7 3 0 0 0 19 7A7 3 0 0 0 5 7V17A7 3 0 0 0 19 17V7M5 12A7 3 0 0 0 19 12" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.88" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(178.8 173.3) rotate(18) scale(0.87)"><rect x="-15" y="-15" width="30" height="30" fill="#F4F2EC" stroke="#F4F2EC" stroke-width="1.85"></rect><path d="M5 7A7 3 0 0 0 19 7A7 3 0 0 0 5 7V17A7 3 0 0 0 19 17V7M5 12A7 3 0 0 0 19 12" transform="translate(-12 -12)" fill="none" stroke="#0E1726" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(249.1 177.8) rotate(-2) scale(0.87)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.84"></rect><path d="M4 8H20V19H4ZM9 8V5H15V8" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.84" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(339.8 194.2) rotate(-6) scale(0.75)"><rect x="-15" y="-15" width="30" height="30" fill="#F4F2EC" stroke="#F4F2EC" stroke-width="2.14"></rect><path d="M12 3L19 6V12C19 16 16 19.5 12 21C8 19.5 5 16 5 12V6Z" transform="translate(-12 -12)" fill="none" stroke="#0E1726" stroke-width="2.14" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(120.3 197.2) rotate(-11) scale(0.76)"><rect x="-15" y="-15" width="30" height="30" fill="#F4F2EC" stroke="#F4F2EC" stroke-width="2.1"></rect><path d="M4 8H20V19H4ZM9 8V5H15V8" transform="translate(-12 -12)" fill="none" stroke="#0E1726" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(303.1 202.5) rotate(-10) scale(0.79)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="2.03"></rect><path d="M7 8L17 11.5M7 16L17 12.5M3 7a2 2 0 1 0 4 0a2 2 0 1 0-4 0M3 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0M17 12a2 2 0 1 0 4 0a2 2 0 1 0-4 0" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="2.03" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(171.2 207.6) rotate(14) scale(0.80)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="2.01"></rect><path d="M3 12H8L10.5 6L13.5 18L16 12H21" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="2.01" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(238.1 213.1) rotate(-8) scale(0.80)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="1.99"></rect><path d="M9 7L4 12L9 17M15 7L20 12L15 17" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="1.99" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(136.8 232.4) rotate(-26) scale(0.70)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="2.3"></rect><path d="M9 7L4 12L9 17M15 7L20 12L15 17" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(308.5 232.8) rotate(8) scale(0.70)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="2.28"></rect><path d="M4 9H19L16 6M20 15H5L8 18" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="2.28" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(185.1 243.6) rotate(-13) scale(0.73)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="2.18"></rect><path d="M4 5H20V10H4ZM4 14H20V19H4ZM7 7.5H9M7 16.5H9" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="2.18" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(254.8 248.1) rotate(-9) scale(0.74)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="2.17"></rect><path d="M3 20H21M6 20V12M12 20V5M18 20V9" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="2.17" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(157.7 272.1) rotate(-27) scale(0.65)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="2.48"></rect><path d="M4 9H19L16 6M20 15H5L8 18" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="2.48" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(207.0 277.6) rotate(-19) scale(0.67)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="2.37"></rect><path d="M7 18H17A4 4 0 0 0 17 10A6 6 0 0 0 5.5 11.5A3.5 3.5 0 0 0 7 18Z" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="2.37" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(262.6 278.1) rotate(-14) scale(0.66)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="2.43"></rect><path d="M5 7A7 3 0 0 0 19 7A7 3 0 0 0 5 7V17A7 3 0 0 0 19 17V7M5 12A7 3 0 0 0 19 12" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="2.43" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(249.4 308.0) rotate(4) scale(0.58)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="2.77"></rect><path d="M9 7L4 12L9 17M15 7L20 12L15 17" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="2.77" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(163.1 309.4) rotate(-16) scale(0.57)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="2.83"></rect><path d="M4 8H20V19H4ZM9 8V5H15V8" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="2.83" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(202.3 316.1) rotate(-9) scale(0.61)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="2.62"></rect><path d="M3 12H8L10.5 6L13.5 18L16 12H21" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="2.62" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(174.1 340.0) rotate(-30) scale(0.51)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="3.12"></rect><path d="M7 8L17 11.5M7 16L17 12.5M3 7a2 2 0 1 0 4 0a2 2 0 1 0-4 0M3 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0M17 12a2 2 0 1 0 4 0a2 2 0 1 0-4 0" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="3.12" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(218.4 345.2) rotate(-7) scale(0.53)"><rect x="-15" y="-15" width="30" height="30" fill="#F4F2EC" stroke="#F4F2EC" stroke-width="3.03"></rect><path d="M12 3L19 6V12C19 16 16 19.5 12 21C8 19.5 5 16 5 12V6Z" transform="translate(-12 -12)" fill="none" stroke="#0E1726" stroke-width="3.03" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <g transform="translate(202.7 379.2) rotate(6) scale(0.48)"><rect x="-15" y="-15" width="30" height="30" fill="#0E1726" stroke="#F4F2EC" stroke-width="3.34"></rect><path d="M4 5H20V10H4ZM4 14H20V19H4ZM7 7.5H9M7 16.5H9" transform="translate(-12 -12)" fill="none" stroke="#F4F2EC" stroke-width="3.34" stroke-linecap="round" stroke-linejoin="round"></path></g>
+        <path d="M200.6 394.0V412.0" fill="none" stroke="#F4F2EC" stroke-width="1.5" stroke-dasharray="3 5"></path>
+        <rect x="180.6" y="418.0" width="40" height="40" fill="{{accent}}"></rect>
+      </svg>
+      </div>
+
+      <div style="display: flex; flex-direction: column; font-size: 13px; line-height: 16px; color: #C9CED6">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 18px 0; border-top: 1px solid #3A4658">
+          <h3 style="flex: 0 0 200px; margin: 0; padding-top: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #F4F2EC">Cloud &amp; hosting</h3>
+          <div style="flex: 999 1 320px; min-width: 0; display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">AWS</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Microsoft Azure</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Google Cloud</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Oracle Cloud</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">IBM Cloud</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">DigitalOcean</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Cloudflare</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Vercel</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Netlify</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Heroku</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Fly.io</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Render</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Hetzner</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Akamai</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 18px 0; border-top: 1px solid #3A4658">
+          <h3 style="flex: 0 0 200px; margin: 0; padding-top: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #F4F2EC">Platform &amp; DevOps</h3>
+          <div style="flex: 999 1 320px; min-width: 0; display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Kubernetes</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Docker</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Terraform</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Pulumi</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Ansible</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">GitHub Actions</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">GitLab CI</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Jenkins</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">CircleCI</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Argo CD</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Helm</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">OpenShift</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Nomad</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 18px 0; border-top: 1px solid #3A4658">
+          <h3 style="flex: 0 0 200px; margin: 0; padding-top: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #F4F2EC">Languages &amp; frameworks</h3>
+          <div style="flex: 999 1 320px; min-width: 0; display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Python</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">TypeScript</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Java</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">C# / .NET</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Go</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Rust</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Ruby on Rails</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Django</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Spring Boot</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Node.js</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">React</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Next.js</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Vue</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Angular</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Svelte</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Flutter</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">React Native</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Swift</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Kotlin</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 18px 0; border-top: 1px solid #3A4658">
+          <h3 style="flex: 0 0 200px; margin: 0; padding-top: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #F4F2EC">Databases &amp; storage</h3>
+          <div style="flex: 999 1 320px; min-width: 0; display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">PostgreSQL</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">MySQL</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">SQL Server</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Oracle Database</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">MongoDB</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Redis</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">DynamoDB</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Cassandra</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Elasticsearch</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">SQLite</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">CockroachDB</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Neo4j</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Supabase</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Firebase</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 18px 0; border-top: 1px solid #3A4658">
+          <h3 style="flex: 0 0 200px; margin: 0; padding-top: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #F4F2EC">Data &amp; analytics</h3>
+          <div style="flex: 999 1 320px; min-width: 0; display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Snowflake</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Databricks</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">BigQuery</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Amazon Redshift</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Microsoft Fabric</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">dbt</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Apache Airflow</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Apache Kafka</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Apache Spark</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Fivetran</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Airbyte</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Power BI</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Tableau</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Looker</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 18px 0; border-top: 1px solid #3A4658">
+          <h3 style="flex: 0 0 200px; margin: 0; padding-top: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #F4F2EC">AI &amp; machine learning</h3>
+          <div style="flex: 999 1 320px; min-width: 0; display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">OpenAI</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Anthropic</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Google Gemini</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Amazon Bedrock</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Azure OpenAI</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Mistral</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Meta Llama</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Cohere</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Hugging Face</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">LangChain</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">LlamaIndex</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">PyTorch</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">TensorFlow</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Pinecone</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Weaviate</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 18px 0; border-top: 1px solid #3A4658">
+          <h3 style="flex: 0 0 200px; margin: 0; padding-top: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #F4F2EC">Business platforms</h3>
+          <div style="flex: 999 1 320px; min-width: 0; display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Salesforce</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">HubSpot</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Microsoft 365</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Google Workspace</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Dynamics 365</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">SAP</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">NetSuite</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Workday</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">ServiceNow</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Shopify</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Stripe</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">QuickBooks</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Zendesk</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Slack</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Jira</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 18px 0; border-top: 1px solid #3A4658">
+          <h3 style="flex: 0 0 200px; margin: 0; padding-top: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #F4F2EC">Integration &amp; automation</h3>
+          <div style="flex: 999 1 320px; min-width: 0; display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Zapier</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Make</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">n8n</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">MuleSoft</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Boomi</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Power Automate</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Workato</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Twilio</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">SendGrid</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Segment</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Temporal</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 18px 0; border-top: 1px solid #3A4658">
+          <h3 style="flex: 0 0 200px; margin: 0; padding-top: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #F4F2EC">Security &amp; identity</h3>
+          <div style="flex: 999 1 320px; min-width: 0; display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Okta</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Microsoft Entra ID</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Auth0</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Cloudflare Zero Trust</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">CrowdStrike</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Wiz</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Snyk</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">HashiCorp Vault</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">1Password</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Duo</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 18px 0; border-top: 1px solid #3A4658; border-bottom: 1px solid #3A4658">
+          <h3 style="flex: 0 0 200px; margin: 0; padding-top: 6px; font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #F4F2EC">Monitoring &amp; operations</h3>
+          <div style="flex: 999 1 320px; min-width: 0; display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Datadog</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Grafana</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Prometheus</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">New Relic</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Splunk</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">Sentry</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">PagerDuty</span>
+            <span style="padding: 6px 11px; border: 1px solid #3A4658; white-space: nowrap">OpenTelemetry</span>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.375rem, 2.6vw, 1.75rem); line-height: 1.25; letter-spacing: -0.015em; max-width: 760px; text-wrap: balance">…and that is only what fit on the page. <span style="color: {{accent}}">You do not need to evaluate all of it. You need the few that fit.</span></p>
+    </section>
+  </div>
+
+  <section id="approach" style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 96px 32px; display: flex; flex-direction: column; gap: 64px">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 48px 72px">
+      <div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+        <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #4A5566">How we navigate it</div>
+        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.08; letter-spacing: -0.025em; text-wrap: balance">We start with your needs, not a vendor’s pitch.</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3A4658; text-wrap: pretty">Technology decisions often go wrong before any code is written: chosen for the hype, the demo, or because it is what the last team knew. We work the other way round. First we understand what you need. Then we narrow the field against the criteria that matter to your business, and recommend the option that fits — even when that is the unglamorous one, or something you already own.</p>
+      </div>
+      <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+        <svg aria-hidden="true" viewBox="0 0 480 220" style="width: 100%; height: auto">
+          <defs>
+            <pattern id="ai-field" width="20" height="20" patternUnits="userSpaceOnUse">
+              <rect x="1" y="1" width="12" height="12" fill="none" stroke="#6B7686" stroke-width="1.5"></rect>
+            </pattern>
+          </defs>
+          <rect x="0" y="10" width="160" height="200" fill="url(#ai-field)"></rect>
+          <path d="M170 12 L246 60 M170 208 L246 168" fill="none" stroke="#6B7686" stroke-width="1.5"></path>
+          <rect x="256" y="62" width="20" height="20" fill="none" stroke="#0E1726" stroke-width="2.5"></rect>
+          <rect x="256" y="90" width="20" height="20" fill="none" stroke="#0E1726" stroke-width="2.5"></rect>
+          <rect x="256" y="118" width="20" height="20" fill="none" stroke="#0E1726" stroke-width="2.5"></rect>
+          <rect x="256" y="146" width="20" height="20" fill="none" stroke="#0E1726" stroke-width="2.5"></rect>
+          <path d="M288 62 L372 92 M288 166 L372 136" fill="none" stroke="#0E1726" stroke-width="1.5"></path>
+          <rect x="384" y="88" width="52" height="52" fill="{{accent}}"></rect>
+          <rect x="384" y="88" width="52" height="52" fill="none" stroke="#0E1726" stroke-width="2.5"></rect>
+        </svg>
+        <div style="display: grid; grid-template-columns: 38fr 30fr 32fr; gap: 8px; font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700">
+          <div>The landscape</div>
+          <div style="text-align: center">A shortlist</div>
+          <div style="text-align: right">The right fit</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 28px 24px">
+      <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 18px; border-top: 3px solid #0E1726">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: #4A5566">01</div>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; line-height: 1.2">Requirements before products</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">We pin down what the system must do, who will run it and what it can cost before a single product is named.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 18px; border-top: 3px solid #0E1726">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: #4A5566">02</div>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; line-height: 1.2">Compare what matters</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">Cost over time, fit with your team’s skills, integration with what you have, security and compliance, and how hard it is to leave.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 18px; border-top: 3px solid #0E1726">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: #4A5566">03</div>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; line-height: 1.2">Prove it small</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">A short pilot on your real data and workflows tells you more than any feature comparison chart.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 18px; border-top: 3px solid {{accent}}">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: #4A5566">04</div>
+        <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; line-height: 1.2">A choice you can defend</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">You get the reasoning in plain language: what we recommend, what we ruled out, and why.</p>
+      </div>
+    </div>
+  </section>
+
+  <div style="background: #FFFFFF; border-top: 1px solid #DCD8CE; border-bottom: 1px solid #DCD8CE">
+    <section style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 80px 32px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #4A5566">How we work</div>
+        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.75rem, 3.4vw, 2.25rem); line-height: 1.1; letter-spacing: -0.02em">Then we build it with you.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 28px 24px">
+        <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 18px; border-top: 3px solid #0E1726">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: #4A5566">01</div>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700">Discover</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">Understand your goals, systems and constraints.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 18px; border-top: 3px solid #0E1726">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: #4A5566">02</div>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700">Design</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">Shape a clear plan with costs and trade-offs.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 18px; border-top: 3px solid {{accent}}">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: #4A5566">03</div>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700">Implement</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">Build, integrate and launch — hands on keyboard.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 18px; border-top: 3px solid #0E1726">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: #4A5566">04</div>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700">Support</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">Hand off cleanly or stay on to run and improve.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="work" style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 96px 32px; display: flex; flex-direction: column; gap: 48px">
+    <div style="display: flex; flex-direction: column; gap: 14px">
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #4A5566">Case studies</div>
+      <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.08; letter-spacing: -0.025em">Problems we have solved.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 24px">
+      <article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #DCD8CE">
+        <div style="height: 120px; background: #0E1726; overflow: hidden">
+          <svg aria-hidden="true" width="240" height="120" viewBox="0 0 240 120">
+            <rect x="28" y="28" width="64" height="64" fill="#F4F2EC"></rect>
+            <path d="M108 92 A64 64 0 0 1 172 28 L172 92 Z" fill="{{accent}}"></path>
+          </svg>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px; padding: 28px">
+          <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #4A5566; height: 15px">YAKIMA CHIEF HOPS | AGRICULTURE</div>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.25">DISPARATE DATA WRANGLER</h3>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700">The challenge</div>
+            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">The client had grown from humble beginnings to become a global leader in hops production and distribution...</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700">What we did</div>
+            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">When trudging down the pathway from a described problem to a proposed solution, there is often an initial fork in the road of "build vs. buy"...</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px; padding-top: 16px; border-top: 1px solid #DCD8CE">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700">The outcome</div>
+            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">More than six years later, data not only continues to flow from the initially identified systems, but numerous additional systems both internal and external have been seamlessly integrated...</p>
+          </div>
+          <div style="display: flex">
+            <a href="case-study-1.html" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 600; color: #0E1726">Read the full case study →</a>
+          </div>
+        </div>
+      </article>
+      <article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #DCD8CE">
+        <div style="height: 120px; background: #0E1726; overflow: hidden">
+          <svg aria-hidden="true" width="240" height="120" viewBox="0 0 240 120">
+            <circle cx="60" cy="60" r="32" fill="#F4F2EC"></circle>
+            <rect x="110" y="30" width="60" height="60" fill="none" stroke="#F4F2EC" stroke-width="3"></rect>
+            <rect x="130" y="50" width="20" height="20" fill="{{accent}}"></rect>
+          </svg>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px; padding: 28px">
+          <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #4A5566">[CLIENT OR INDUSTRY]</div>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.25">[CASE STUDY 2 TITLE]</h3>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700">The challenge</div>
+            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">[What the client needed and what stood in the way.]</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700">What we did</div>
+            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">[The options you weighed, what you chose and what you built.]</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px; padding-top: 16px; border-top: 1px solid #DCD8CE">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700">The outcome</div>
+            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">[A measurable result: time saved, cost reduced, launch date met.]</p>
+          </div>
+          <div style="display: flex">
+            <a href="case-study-2.html" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 600; color: #0E1726">Read the full case study →</a>
+          </div>
+        </div>
+      </article>
+      <article style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #DCD8CE">
+        <div style="height: 120px; background: #0E1726; overflow: hidden">
+          <svg aria-hidden="true" width="240" height="120" viewBox="0 0 240 120">
+            <path d="M28 92 A64 64 0 0 1 92 28 L92 92 Z" fill="#F4F2EC"></path>
+            <circle cx="140" cy="60" r="32" fill="none" stroke="#F4F2EC" stroke-width="3"></circle>
+            <circle cx="140" cy="60" r="12" fill="{{accent}}"></circle>
+          </svg>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px; padding: 28px">
+          <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #4A5566">[CLIENT OR INDUSTRY]</div>
+          <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.25">[CASE STUDY 3 TITLE]</h3>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700">The challenge</div>
+            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">[What the client needed and what stood in the way.]</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700">What we did</div>
+            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">[The options you weighed, what you chose and what you built.]</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px; padding-top: 16px; border-top: 1px solid #DCD8CE">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700">The outcome</div>
+            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A4658">[A measurable result: time saved, cost reduced, launch date met.]</p>
+          </div>
+          <div style="display: flex">
+            <a href="case-study-3.html" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 600; color: #0E1726">Read the full case study →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div style="background: {{accent}}; color: #0E1726">
+    <section style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 56px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 48px">
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.625rem, 3vw, 2rem); line-height: 1.1; letter-spacing: -0.02em">Prefer it on one page?</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.5; max-width: 560px">Our one-page overview covers what we do, how we work and how to reach us. Print it or forward it to your team.</p>
+      </div>
+      <a href="overview.html" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; background: #0E1726; color: #F4F2EC; font-weight: 600; font-size: 16px; text-decoration: none">View the one-page overview</a>
+    </section>
+  </div>
+
+  <div id="contact" style="background: #0E1726; color: #F4F2EC">
+    <section style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 96px 32px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 48px 72px">
+      <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: {{accent}}">Contact</div>
+        <h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(2.25rem, 5vw, 3.25rem); line-height: 1.04; letter-spacing: -0.03em">Let’s build what’s next.</h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #C9CED6; max-width: 460px; text-wrap: pretty">Tell us what you are trying to do. We will come back with a few questions and a time to talk.</p>
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 12px">
+          <div style="display: flex; flex-direction: column; gap: 2px">
+            <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #C9CED6">Email</div>
+            <a href="mailto:info@abstractimplements.tech" style="display: inline-flex; align-items: center; min-height: 44px; color: #F4F2EC; font-size: 18px; font-weight: 600">info@abstractimplements.tech</a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px">
+            <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #C9CED6">Phone</div>
+            <a href="tel:+14252800607" style="display: inline-flex; align-items: center; min-height: 44px; color: #F4F2EC; font-size: 18px; font-weight: 600">(+1)425-280-0607</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 0; box-sizing: border-box; padding: 36px; background: #F4F2EC; color: #0E1726">
+        <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submit }}" style="margin: 0; display: flex; flex-direction: column; gap: 20px">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 20px">
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <label for="ai-name" style="font-size: 14px; font-weight: 600">Name</label>
+                <input id="ai-name" name="name" type="text" required="{{ true }}" style="width: 100%; box-sizing: border-box; min-height: 48px; padding: 12px 14px; border: 1px solid #6B7686; border-radius: 0; background: #FFFFFF; color: #0E1726; font: inherit; font-size: 16px">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <label for="ai-email" style="font-size: 14px; font-weight: 600">Work email</label>
+                <input id="ai-email" name="email" type="email" required="{{ true }}" style="width: 100%; box-sizing: border-box; min-height: 48px; padding: 12px 14px; border: 1px solid #6B7686; border-radius: 0; background: #FFFFFF; color: #0E1726; font: inherit; font-size: 16px">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <label for="ai-company" style="font-size: 14px; font-weight: 600">Company <span style="font-weight: 400; color: #4A5566">(optional)</span></label>
+                <input id="ai-company" name="company" type="text" style="width: 100%; box-sizing: border-box; min-height: 48px; padding: 12px 14px; border: 1px solid #6B7686; border-radius: 0; background: #FFFFFF; color: #0E1726; font: inherit; font-size: 16px">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <label for="ai-topic" style="font-size: 14px; font-weight: 600">What do you need help with?</label>
+                <select id="ai-topic" name="topic" style="width: 100%; box-sizing: border-box; min-height: 48px; padding: 12px 14px; border: 1px solid #6B7686; border-radius: 0; background: #FFFFFF; color: #0E1726; font: inherit; font-size: 16px">
+                  <option value="choosing">Choosing a platform or stack</option>
+                  <option value="strategy">Strategy &amp; architecture</option>
+                  <option value="cloud">Cloud &amp; infrastructure</option>
+                  <option value="software">Software delivery</option>
+                  <option value="data">Data &amp; AI</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <label for="ai-message" style="font-size: 14px; font-weight: 600">Tell us about the project</label>
+              <textarea id="ai-message" name="message" rows="5" required="{{ true }}" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 1px solid #6B7686; border-radius: 0; background: #FFFFFF; color: #0E1726; font: inherit; font-size: 16px; line-height: 1.5; resize: vertical"></textarea>
+            </div>
+            <button type="submit" style="align-self: flex-start; min-height: 52px; padding: 0 28px; border: 0; border-radius: 0; background: #0E1726; color: #F4F2EC; font: inherit; font-size: 16px; font-weight: 600; cursor: pointer">Send message</button>
+          </form>
+        </sc-if>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="display: flex; flex-direction: column; gap: 14px; padding: 24px 0">
+            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 48 48"><rect x="2" y="2" width="44" height="44" fill="{{accent}}" stroke="#0E1726" stroke-width="3"></rect><path d="M13 25 L21 33 L36 16" fill="none" stroke="#0E1726" stroke-width="4"></path></svg>
+            <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.02em">Thanks — message received.</h3>
+            <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3A4658">We will reply to the email address you gave us.</p>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <footer style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 0 32px 48px">
+      <div style="padding-top: 32px; border-top: 1px solid #3A4658; display: flex; flex-direction: column; gap: 20px">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+          <div style="display: flex; align-items: center; gap: 12px">
+            <svg role="img" aria-label="Abstract Implements logo" width="28" height="28" viewBox="0 0 40 40">
+              <rect x="0" y="0" width="18" height="18" fill="#F4F2EC"></rect>
+              <path d="M22 18 A18 18 0 0 1 40 0 L40 18 Z" fill="{{accent}}"></path>
+              <circle cx="9" cy="31" r="9" fill="#F4F2EC"></circle>
+              <rect x="23.5" y="23.5" width="15" height="15" fill="none" stroke="#F4F2EC" stroke-width="3"></rect>
+            </svg>
+            <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px">abstract<span style="font-weight: 500; opacity: 0.85"> implements</span></span>
+            <span style="font-size: 14px; color: #C9CED6">Ideas, implemented.</span>
+          </div>
+          <div style="font-size: 14px; color: #C9CED6">© 2026 Abstract Implements · abstractimplements.tech</div>
+        </div>
+        <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #9AA4B2; max-width: 760px">Product and company names on this page are trademarks of their respective owners. They are listed to illustrate the market and do not imply partnership or endorsement.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FF5A1F","options":["#FF5A1F","#3DDC97","#5B8CFF","#FFC23D"]},"$preview":{"width":1440,"height":6500}}'>
+class Component extends DCLogic {
+renderVals() {
+const sent = !!(this.state && this.state.sent);
+return {
+accent: this.props.accent ?? '#FF5A1F',
+sent: sent,
+showForm: !sent,
+submit: (e) => { if (e && e.preventDefault) { e.preventDefault(); } this.setState({ sent: true }); }
+};
+}
+}
+</script>
+</body>
+</html>
