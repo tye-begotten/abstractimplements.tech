@@ -1,13 +1,12 @@
 <?php
 // Contact form handler for abstractimplements.tech
-// Receives the POST from the form on index.html and emails it to $TO.
+// Receives the POST from the form on index.html and emails it to $TO,
+// sending through the mailbox's own SMTP server so the message is authenticated.
 // Replies with JSON: {"ok": true} or {"ok": false, "error": "..."}.
 
 declare(strict_types=1);
 
 $TO   = 'info@abstractimplements.tech';
-// Must be a mailbox on this domain, or the message is likely to be rejected or marked as spam.
-$FROM = 'tye@abstractimplements.tech';
 
 $TOPICS = [
     'choosing' => 'Choosing a platform or stack',
@@ -18,6 +17,16 @@ $TOPICS = [
     'training' => 'Training & mentoring',
     'other'    => 'Something else',
 ];
+
+// SMTP settings live in contact-config.php, which is NOT in git.
+// Preferred location: one level above the web root. Fallback: next to this file.
+$CONFIG = null;
+foreach ([dirname(__DIR__) . '/contact-config.php', __DIR__ . '/contact-config.php'] as $path) {
+    if (is_file($path)) {
+        $CONFIG = require $path;
+        break;
+    }
+}
 
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
@@ -67,23 +76,81 @@ $body = "Name: $name\n"
       . str_replace(["\r\n", "\r"], "\n", $message) . "\n"
       . "\n-- \nSent from the contact form on abstractimplements.tech\n";
 
-$headers = [
-    'From: Abstract Implements website <' . $FROM . '>',
-    'Reply-To: ' . $email,
-    'MIME-Version: 1.0',
-    'Content-Type: text/plain; charset=UTF-8',
-    'Content-Transfer-Encoding: 8bit',
-];
+if (!is_array($CONFIG) || empty($CONFIG['username']) || empty($CONFIG['password'])) {
+    error_log('contact.php: contact-config.php is missing or incomplete');
+    respond(500, ['ok' => false, 'error' => 'The message could not be sent.']);
+}
 
-$sent = mail(
-    $TO,
-    '=?UTF-8?B?' . base64_encode($subject) . '?=',
-    $body,
-    implode("\r\n", $headers),
-    '-f' . $FROM
-);
+$FROM = (string)($CONFIG['from'] ?? $CONFIG['username']);
 
-if (!$sent) {
+// Reads one SMTP reply (which may span several lines) and checks its status code.
+function smtp_expect($socket, int $code): void
+{
+    $reply = '';
+    while (($line = fgets($socket, 1024)) !== false) {
+        $reply .= $line;
+        if (strlen($line) < 4 || $line[3] === ' ') {
+            break;
+        }
+    }
+    if ((int)substr($reply, 0, 3) !== $code) {
+        throw new RuntimeException('SMTP expected ' . $code . ', got: ' . trim($reply));
+    }
+}
+
+function smtp_command($socket, string $command, int $code): void
+{
+    fwrite($socket, $command . "\r\n");
+    smtp_expect($socket, $code);
+}
+
+// Sends one plain-text message over an authenticated, encrypted SMTP connection.
+function smtp_send(array $config, string $from, string $to, string $replyTo, string $subject, string $body): void
+{
+    $host = (string)($config['host'] ?? 'smtp.hostinger.com');
+    $port = (int)($config['port'] ?? 465);
+
+    $socket = stream_socket_client('ssl://' . $host . ':' . $port, $errno, $errstr, 15);
+    if ($socket === false) {
+        throw new RuntimeException('SMTP connect failed: ' . $errstr);
+    }
+    stream_set_timeout($socket, 15);
+
+    try {
+        smtp_expect($socket, 220);
+        smtp_command($socket, 'EHLO abstractimplements.tech', 250);
+        smtp_command($socket, 'AUTH LOGIN', 334);
+        smtp_command($socket, base64_encode((string)$config['username']), 334);
+        smtp_command($socket, base64_encode((string)$config['password']), 235);
+        smtp_command($socket, 'MAIL FROM:<' . $from . '>', 250);
+        smtp_command($socket, 'RCPT TO:<' . $to . '>', 250);
+        smtp_command($socket, 'DATA', 354);
+
+        $headers = [
+            'Date: ' . date('r'),
+            'Message-ID: <' . bin2hex(random_bytes(16)) . '@abstractimplements.tech>',
+            'From: Abstract Implements website <' . $from . '>',
+            'To: <' . $to . '>',
+            'Reply-To: <' . $replyTo . '>',
+            'Subject: =?UTF-8?B?' . base64_encode($subject) . '?=',
+            'MIME-Version: 1.0',
+            'Content-Type: text/plain; charset=UTF-8',
+            'Content-Transfer-Encoding: base64',
+        ];
+        $data = implode("\r\n", $headers) . "\r\n\r\n" . chunk_split(base64_encode($body), 76, "\r\n");
+
+        fwrite($socket, $data . ".\r\n");
+        smtp_expect($socket, 250);
+        fwrite($socket, "QUIT\r\n");
+    } finally {
+        fclose($socket);
+    }
+}
+
+try {
+    smtp_send($CONFIG, $FROM, $TO, $email, $subject, $body);
+} catch (Throwable $e) {
+    error_log('contact.php: ' . $e->getMessage());
     respond(500, ['ok' => false, 'error' => 'The message could not be sent.']);
 }
 
