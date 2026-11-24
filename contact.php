@@ -7,7 +7,7 @@ declare(strict_types=1);
 
 $TO   = 'info@abstractimplements.tech';
 // Must be a mailbox on this domain, or the message is likely to be rejected or marked as spam.
-$FROM = 'info@abstractimplements.tech';
+$FROM = 'tye@abstractimplements.tech';
 
 $TOPICS = [
     'choosing' => 'Choosing a platform or stack',
