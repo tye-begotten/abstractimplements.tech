@@ -108,7 +108,7 @@ function smtp_command($socket, string $command, int $code): void
 function smtp_send(array $config, string $from, string $to, string $replyTo, string $subject, string $body): void
 {
     $host = (string)($config['host'] ?? 'smtp.hostinger.com');
-    $protocol = (string)($config['protocol'] ?? 'tls');
+    $protocol = (string)($config['protocol'] ?? 'ssl');
     $port = (int)($config['port'] ?? ($protocol === 'tls' ? 587 : 465));
 
     $socket = stream_socket_client(($protocol === 'tls' ? 'tls' : 'ssl') . '://' . $host . ':' . $port, $errno, $errstr, 15);
@@ -133,12 +133,16 @@ function smtp_send(array $config, string $from, string $to, string $replyTo, str
             'From: Abstract Implements website <' . $from . '>',
             'To: <' . $to . '>',
             'Reply-To: <' . $replyTo . '>',
-            'Subject: =?UTF-8?B?' . base64_encode($subject) . '?=',
+            'Subject: ' . (preg_match('/[^\x20-\x7E]/', $subject) ? '=?UTF-8?B?' . base64_encode($subject) . '?=' : $subject),
             'MIME-Version: 1.0',
             'Content-Type: text/plain; charset=UTF-8',
-            'Content-Transfer-Encoding: base64',
+            'Content-Transfer-Encoding: quoted-printable',
         ];
-        $data = implode("\r\n", $headers) . "\r\n\r\n" . chunk_split(base64_encode($body), 76, "\r\n");
+        // Quoted-printable keeps plain text readable on the wire (base64 bodies raise spam scores).
+        // A leading dot on a line is doubled, as SMTP requires.
+        $encoded = quoted_printable_encode(str_replace("\n", "\r\n", $body));
+        $encoded = preg_replace('/^\./m', '..', $encoded);
+        $data = implode("\r\n", $headers) . "\r\n\r\n" . rtrim($encoded, "\r\n") . "\r\n";
 
         fwrite($socket, $data . ".\r\n");
         smtp_expect($socket, 250);
