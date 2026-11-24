@@ -108,9 +108,10 @@ function smtp_command($socket, string $command, int $code): void
 function smtp_send(array $config, string $from, string $to, string $replyTo, string $subject, string $body): void
 {
     $host = (string)($config['host'] ?? 'smtp.hostinger.com');
-    $port = (int)($config['port'] ?? 465);
+    $protocol = (string)($config['protocol'] ?? 'tls');
+    $port = (int)($config['port'] ?? ($protocol === 'tls' ? 587 : 465));
 
-    $socket = stream_socket_client('ssl://' . $host . ':' . $port, $errno, $errstr, 15);
+    $socket = stream_socket_client(($protocol === 'tls' ? 'tls' : 'ssl') . '://' . $host . ':' . $port, $errno, $errstr, 15);
     if ($socket === false) {
         throw new RuntimeException('SMTP connect failed: ' . $errstr);
     }
