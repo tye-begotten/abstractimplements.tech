@@ -6,7 +6,6 @@
 
 declare(strict_types=1);
 
-$TO   = 'info@abstractimplements.tech';
 
 $TOPICS = [
     'choosing' => 'Choosing a platform or stack',
@@ -82,6 +81,7 @@ if (!is_array($CONFIG) || empty($CONFIG['username']) || empty($CONFIG['password'
 }
 
 $FROM = (string)($CONFIG['from'] ?? $CONFIG['username']);
+$TO   = (string)($CONFIG['to'] ?? 'tye@abstractimplements.tech');
 
 // Reads one SMTP reply (which may span several lines) and checks its status code.
 function smtp_expect($socket, int $code): void
@@ -108,10 +108,9 @@ function smtp_command($socket, string $command, int $code): void
 function smtp_send(array $config, string $from, string $to, string $replyTo, string $subject, string $body): void
 {
     $host = (string)($config['host'] ?? 'smtp.hostinger.com');
-    $protocol = (string)($config['protocol'] ?? 'ssl');
-    $port = (int)($config['port'] ?? ($protocol === 'tls' ? 587 : 465));
+    $port = (int)($config['port'] ?? 465);
 
-    $socket = stream_socket_client(($protocol === 'tls' ? 'tls' : 'ssl') . '://' . $host . ':' . $port, $errno, $errstr, 15);
+    $socket = stream_socket_client('ssl://' . $host . ':' . $port, $errno, $errstr, 15);
     if ($socket === false) {
         throw new RuntimeException('SMTP connect failed: ' . $errstr);
     }
