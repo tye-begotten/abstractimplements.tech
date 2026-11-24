@@ -42,6 +42,7 @@ a{color:#0E1726}a:hover{color:#3A4658}
     </header>
 
     <section style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 72px 32px 104px; display: flow-root">
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: {{accent}}; margin-bottom: 22px">Technology consulting</div>
       <svg aria-hidden="true" viewBox="0 0 400 400" style="float: right; width: clamp(104px, 30vw, 380px); height: auto; margin: 0 0 16px clamp(16px, 4vw, 64px)">
         <rect x="0" y="0" width="180" height="180" fill="#F4F2EC"></rect>
         <path d="M220 180 A180 180 0 0 1 400 0 L400 180 Z" fill="{{accent}}"></path>
@@ -50,7 +51,6 @@ a{color:#0E1726}a:hover{color:#3A4658}
         <rect x="282" y="282" width="56" height="56" fill="{{accent}}"></rect>
       </svg>
       <div style="min-width: 0">
-        <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: {{accent}}; margin-bottom: 22px">Technology consulting</div>
         <h1 style="margin: 0 0 22px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(2rem, 6vw, 4.75rem); line-height: 1; letter-spacing: -0.03em; text-wrap: balance">From abstract ideas to working systems.</h1>
         <p style="margin: 0 0 36px; font-size: 19px; line-height: 1.55; color: #C9CED6; max-width: 560px; text-wrap: pretty">We help growing teams plan, build and run the technology their business depends on — senior expertise, without the overhead of a big firm.</p>
         <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px">
@@ -610,6 +610,10 @@ a{color:#0E1726}a:hover{color:#3A4658}
       <div style="flex: 1 1 440px; min-width: 0; box-sizing: border-box; padding: 36px; background: #F4F2EC; color: #0E1726">
         <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
           <form onSubmit="{{ submit }}" style="margin: 0; display: flex; flex-direction: column; gap: 20px">
+            <div aria-hidden="true" style="display: none">
+              <label for="ai-website">Leave this field empty</label>
+              <input id="ai-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 20px">
               <div style="display: flex; flex-direction: column; gap: 8px">
                 <label for="ai-name" style="font-size: 14px; font-weight: 600">Name</label>
@@ -640,7 +644,10 @@ a{color:#0E1726}a:hover{color:#3A4658}
               <label for="ai-message" style="font-size: 14px; font-weight: 600">Tell us about the project</label>
               <textarea id="ai-message" name="message" rows="5" required="{{ true }}" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border: 1px solid #6B7686; border-radius: 0; background: #FFFFFF; color: #0E1726; font: inherit; font-size: 16px; line-height: 1.5; resize: vertical"></textarea>
             </div>
-            <button type="submit" style="align-self: flex-start; min-height: 52px; padding: 0 28px; border: 0; border-radius: 0; background: #0E1726; color: #F4F2EC; font: inherit; font-size: 16px; font-weight: 600; cursor: pointer">Send message</button>
+            <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
+              <p role="alert" style="margin: 0; padding: 12px 14px; border: 2px solid #0E1726; background: #FFFFFF; font-size: 15px; line-height: 1.5">Your message could not be sent. Please try again, or email us at info@abstractimplements.tech.</p>
+            </sc-if>
+            <button type="submit" disabled="{{ sending }}" style="align-self: flex-start; min-height: 52px; padding: 0 28px; border: 0; border-radius: 0; background: #0E1726; color: #F4F2EC; font: inherit; font-size: 16px; font-weight: 600; cursor: pointer">Send message</button>
           </form>
         </sc-if>
         <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
@@ -677,12 +684,24 @@ a{color:#0E1726}a:hover{color:#3A4658}
 <script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FF5A1F","options":["#FF5A1F","#3DDC97","#5B8CFF","#FFC23D"]},"$preview":{"width":1440,"height":6760}}'>
 class Component extends DCLogic {
 renderVals() {
-const sent = !!(this.state && this.state.sent);
+const st = this.state || {};
+const sent = !!st.sent;
 return {
 accent: this.props.accent ?? '#FF5A1F',
 sent: sent,
 showForm: !sent,
-submit: (e) => { if (e && e.preventDefault) { e.preventDefault(); } this.setState({ sent: true }); }
+error: !!st.error,
+sending: !!st.sending,
+submit: (e) => {
+e.preventDefault();
+if (this.state && this.state.sending) { return; }
+const data = new FormData(e.currentTarget);
+this.setState({ sending: true, error: false });
+fetch('contact.php', { method: 'POST', body: data })
+.then((r) => (r.ok ? r.json() : Promise.reject(new Error('send failed'))))
+.then((d) => { if (d && d.ok) { this.setState({ sent: true, sending: false }); } else { throw new Error('send failed'); } })
+.catch(() => { this.setState({ sending: false, error: true }); });
+}
 };
 }
 }
